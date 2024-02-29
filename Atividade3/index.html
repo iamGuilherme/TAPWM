@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Design Responsivo</title>
+    </head>
+
+    <style>
+        body {
+            font-family:Helvetica, sans-serif;
+            header {
+            background-color: lightblue;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: black;
+            }
+
+            section {
+            display: -webkit-flex;
+            display: flex;
+            }
+
+            nav {
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            background: lightcyan;
+            padding: 20px;
+            }
+           
+            nav ul {
+            list-style-type: none;
+            padding: 0;
+            }
+
+            article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: lightcyan;
+            height: 300px; 
+            }
+
+            section::after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+        }
+    </style>
+
+    <body>
+        <header>
+          <h2>Design Responsivo</h2>
+        </header>
+        
+        <section>
+          <nav>
+            <ul>
+              <li><a href="https://www.nuvemshop.com.br/blog/design-responsivo/">1. O que é o design responsivo?</a></li>
+              <br>
+              <li><a href="https://www.alura.com.br/artigos/por-que-um-design-responsivo-e-importante-para-potencializar-seu-marketing">2. Por que o design responsivo é crucial?</a></li>
+              <br>
+              <li><a href="https://blog.revelo.com.br/blog/descubra-o-que-e-design-responsivo/">3. Como implementar o design responsivo?</a></li>
+            </ul>
+          </nav>
+          
+          <article>
+            <h1>Conclusão</h1>
+            <p>Em resumo, o design responsivo não é apenas uma tendência, mas uma necessidade para garantir 
+            <br>
+            que seu site atenda às expectativas dos usuários modernos. Invista nessa prática e proporcione uma
+            <br> 
+            experiência de qualidade em todas as telas </p>
+          </article>
+        </section>
+        
+    </body>
+</html>
