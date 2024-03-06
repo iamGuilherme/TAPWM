@@ -1,0 +1,11 @@
+C:\Users\0031432412013\source\repos\Pclasse\Pclasse\bin\Debug\Pclasse.exe.config
+C:\Users\0031432412013\source\repos\Pclasse\Pclasse\bin\Debug\Pclasse.exe
+C:\Users\0031432412013\source\repos\Pclasse\Pclasse\bin\Debug\Pclasse.pdb
+C:\Users\0031432412013\source\repos\Pclasse\Pclasse\obj\Debug\Pclasse.csproj.AssemblyReference.cache
+C:\Users\0031432412013\source\repos\Pclasse\Pclasse\obj\Debug\Pclasse.Properties.Resources.resources
+C:\Users\0031432412013\source\repos\Pclasse\Pclasse\obj\Debug\Pclasse.csproj.GenerateResource.cache
+C:\Users\0031432412013\source\repos\Pclasse\Pclasse\obj\Debug\Pclasse.csproj.CoreCompileInputs.cache
+C:\Users\0031432412013\source\repos\Pclasse\Pclasse\obj\Debug\Pclasse.exe
+C:\Users\0031432412013\source\repos\Pclasse\Pclasse\obj\Debug\Pclasse.pdb
+C:\Users\0031432412013\source\repos\Pclasse\Pclasse\obj\Debug\Pclasse.Form1.resources
+C:\Users\0031432412013\source\repos\Pclasse\Pclasse\obj\Debug\Pclasse.frmMensalista.resources
