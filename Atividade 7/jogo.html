@@ -1,0 +1,43 @@
+]<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+</head>
+<body>
+    <script>
+      function escolhaUsuario() {
+        let escolha = prompt("Escolha pedra, papel ou tesoura:");
+        return escolha.toLowerCase();
+      }
+     
+      function escolhaComputador() {
+        let escolhas = ['pedra', 'papel', 'tesoura'];
+        let indice = Math.floor(Math.random() * 3);
+        return escolhas[indice];
+      }
+     
+      function determinarVencedor(escolhaUsuario, escolhaComputador) {
+        if (escolhaUsuario === escolhaComputador) {
+          return "Empate!";
+        } else if ((escolhaUsuario === "pedra" && escolhaComputador === "tesoura") ||
+                   (escolhaUsuario === "tesoura" && escolhaComputador === "papel") ||
+                   (escolhaUsuario === "papel" && escolhaComputador === "pedra")) {
+          return " Você venceu!";
+        } else {
+          return " O computador venceu!";
+        }
+      }
+     
+      function jogar() {
+        let escolhaDoUsuario = escolhaUsuario();
+        let escolhaDoComputador = escolhaComputador();
+        let resultado = determinarVencedor(escolhaDoUsuario, escolhaDoComputador);
+        alert("Você escolheu: " + escolhaDoUsuario + "\nO computador escolheu: " + escolhaDoComputador + "\nResultado: " + resultado);
+      }
+     
+      jogar();
+    </script>
+</body>
+</html>
