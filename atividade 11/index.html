@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        input[type="number"] {
+            width: calc(25% - 10px);
+            margin: 5px;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Exercícios JavaScript</h2>
+
+    <div>
+        <h3>1) Maior número usando ifs</h3>
+        <input type="number" id="num1-if" placeholder="Número 1">
+        <br>
+        <input type="number" id="num2-if" placeholder="Número 2">
+        <br>
+        <input type="number" id="num3-if" placeholder="Número 3">
+        <br>
+        <input type="number" id="num4-if" placeholder="Número 4">
+        <br>
+        <button onclick="calcularMaiorIf()">Calcular Maior</button>
+        <div class="resultado" id="resultado-if"></div>
+    </div>
+
+    <div>
+        <h3>2) Maior número usando Math.max</h3>
+        <input type="number" id="num1-max" placeholder="Número 1">
+        <br>
+        <input type="number" id="num2-max" placeholder="Número 2">
+        <br>
+        <input type="number" id="num3-max" placeholder="Número 3">
+        <br>
+        <input type="number" id="num4-max" placeholder="Número 4">
+        <br>
+        <button onclick="calcularMaiorMax()">Calcular Maior</button>
+        <div class="resultado" id="resultado-max"></div>
+    </div>
+
+    <div>
+        <h3>3) Ordenar três números</h3>
+        <input type="number" id="num1-ordem" placeholder="Número 1">
+        <br>
+        <input type="number" id="num2-ordem" placeholder="Número 2">
+        <br>
+        <input type="number" id="num3-ordem" placeholder="Número 3">
+        <br>
+        <button onclick="ordenarNumeros()">Ordenar</button>
+        <div class="resultado" id="resultado-ordem"></div>
+    </div>
+</div>
+
+<script src="/script.js"></script>
+
+</body>
+</html>
