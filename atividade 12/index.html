@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício - Array e Subconjuntos</title>
+</head>
+<body>
+    <h1>Exercício - Array e Subconjuntos</h1>
+
+    <h2>1) Função de Array</h2>
+    <label for="array-input">Digite três números separados por vírgula:</label>
+    <br>
+    <br>
+    <input type="text" id="array-input" placeholder="Exemplo: 2, 3, 4">
+    <br>
+    <br>
+    <button onclick="executarArray()">Calcular</button>
+    <p id="array-output"></p>
+    <br>
+
+    <h2>2) Verificar Subconjunto</h2>
+    <label for="palavra1">Digite a primeira palavra:</label>
+    <input type="text" id="palavra1">
+    <br><br>
+    <label for="palavra2">Digite a segunda palavra:</label>
+    <input type="text" id="palavra2">
+    <br>
+    <br>
+    <button onclick="executarSubconjunto()">Verificar</button>
+    <p id="subconjunto-output"></p>
+
+    <script>
+        function executarArray() {
+            const arrayInput = document.getElementById("array-input").value.split(',').map(Number);
+            if (arrayInput.length !== 3 || arrayInput.some(isNaN)) {
+                document.getElementById("array-output").innerText = "Por favor, insira exatamente três números.";
+                return;
+            }
+
+            const soma = arrayInput.reduce((a, b) => a + b);
+            const quadradoPrimeiro = Math.pow(arrayInput[0], 2);
+            const quadradoSegundo = Math.pow(arrayInput[1], 2);
+
+            document.getElementById("array-output").innerText = `A soma dos três números é: ${soma}, o quadrado do primeiro é: ${quadradoPrimeiro} e o quadrado do segundo é: ${quadradoSegundo}`;
+        }
+
+        function executarSubconjunto() {
+            const palavra1 = document.getElementById("palavra1").value;
+            const palavra2 = document.getElementById("palavra2").value;
+
+            if (!palavra1 || !palavra2) {
+                document.getElementById("subconjunto-output").innerText = "erro";
+                return;
+            }
+
+            if (palavra1.includes(palavra2)) {
+                document.getElementById("subconjunto-output").innerText = "é um subconjunto";
+            } else {
+                document.getElementById("subconjunto-output").innerText = "não é um subconjunto";
+            }
+        }
+    </script>
+</body>
+</html>
