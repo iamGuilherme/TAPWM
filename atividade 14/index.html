@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de JavaScript</title>
+</head>
+<body>
+    <h1 align="center">Exercícios de JavaScript</h1>
+
+    <section align="center">
+        <h2>1. Cálculo da Área de um Retângulo</h2>
+        <label for="base">Base:</label>
+        <input type="number" id="base" required>
+        <br>
+        <br>
+        <label for="altura">Altura:</label>
+        <input type="number" id="altura" required>
+        <br>
+        <br>
+        <button onclick="calcularAreaRetangulo()">Calcular Área</button>
+        <p id="resultado-area"></p>
+    </section>
+
+    <section align="center">
+        <h2>2. Detalhes da Conta Corrente e Poupança</h2>
+        <button onclick="mostrarDetalhesContas()">Mostrar Detalhes das Contas</button>
+        <div id="detalhes-contas"></div>
+    </section>
+
+    <script>
+
+        function Retangulo(base, altura) {
+            this.base = base;
+            this.altura = altura;
+
+            this.calcularArea = function() {
+                return this.base * this.altura;
+            };
+        }
+
+
+        function calcularAreaRetangulo() {
+            const base = parseFloat(document.getElementById('base').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+            const retangulo = new Retangulo(base, altura);
+            document.getElementById('resultado-area').innerText = 'Área do Retângulo: ' + retangulo.calcularArea();
+        }
+
+
+        function Conta(nomeCorrentista, banco, numeroConta, saldo) {
+            this._nomeCorrentista = nomeCorrentista;
+            this._banco = banco;
+            this._numeroConta = numeroConta;
+            this._saldo = saldo;
+
+            
+            this.getNomeCorrentista = function() {
+                return this._nomeCorrentista;
+            };
+
+            this.setNomeCorrentista = function(nomeCorrentista) {
+                this._nomeCorrentista = nomeCorrentista;
+            };
+
+            this.getBanco = function() {
+                return this._banco;
+            };
+
+            this.setBanco = function(banco) {
+                this._banco = banco;
+            };
+
+            this.getNumeroConta = function() {
+                return this._numeroConta;
+            };
+
+            this.setNumeroConta = function(numeroConta) {
+                this._numeroConta = numeroConta;
+            };
+
+            this.getSaldo = function() {
+                return this._saldo;
+            };
+
+            this.setSaldo = function(saldo) {
+                this._saldo = saldo;
+            };
+        }
+
+
+        function Corrente(nomeCorrentista, banco, numeroConta, saldo, saldoEspecial) {
+            Conta.call(this, nomeCorrentista, banco, numeroConta, saldo);
+            this._saldoEspecial = saldoEspecial;
+
+            this.getSaldoEspecial = function() {
+                return this._saldoEspecial;
+            };
+
+            this.setSaldoEspecial = function(saldoEspecial) {
+                this._saldoEspecial = saldoEspecial;
+            };
+        }
+
+        function Poupanca(nomeCorrentista, banco, numeroConta, saldo, juros, dataVencimento) {
+            Conta.call(this, nomeCorrentista, banco, numeroConta, saldo);
+            this._juros = juros;
+            this._dataVencimento = dataVencimento;
+
+            this.getJuros = function() {
+                return this._juros;
+            };
+
+            this.setJuros = function(juros) {
+                this._juros = juros;
+            };
+
+            this.getDataVencimento = function() {
+                return this._dataVencimento;
+            };
+
+            this.setDataVencimento = function(dataVencimento) {
+                this._dataVencimento = dataVencimento;
+            };
+        }
+
+        function mostrarDetalhesContas() {
+            const contaCorrente = new Corrente("João", "Banco A", "123456", 1000, 500);
+            const contaPoupanca = new Poupanca("Maria", "Banco B", "789101", 2000, 1.5, "24/12/2024");
+
+            let detalhes = "<h3>Conta Corrente:</h3>";
+            detalhes += "Nome: " + contaCorrente.getNomeCorrentista() + "<br>";
+            detalhes += "Banco: " + contaCorrente.getBanco() + "<br>";
+            detalhes += "Número da Conta: " + contaCorrente.getNumeroConta() + "<br>";
+            detalhes += "Saldo: " + contaCorrente.getSaldo() + "<br>";
+            detalhes += "Saldo Especial: " + contaCorrente.getSaldoEspecial() + "<br><br>";
+
+            detalhes += "<h3>Conta Poupança:</h3>";
+            detalhes += "Nome: " + contaPoupanca.getNomeCorrentista() + "<br>";
+            detalhes += "Banco: " + contaPoupanca.getBanco() + "<br>";
+            detalhes += "Número da Conta: " + contaPoupanca.getNumeroConta() + "<br>";
+            detalhes += "Saldo: " + contaPoupanca.getSaldo() + "<br>";
+            detalhes += "Juros: " + contaPoupanca.getJuros() + "<br>";
+            detalhes += "Data de Vencimento: " + contaPoupanca.getDataVencimento() + "<br>";
+
+            document.getElementById('detalhes-contas').innerHTML = detalhes;
+        }
+    </script>
+</body>
+</html>
