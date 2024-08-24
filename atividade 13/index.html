@@ -1,0 +1,44 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+        <body>
+            <script>
+                const pessoa = {
+                    nome: "Guilherme",
+                    idade: 18,
+                saudacao: function() {
+                        alert(`Olá, meu nome é ${this.nome} e tenho ${this.idade} anos`);
+                    }
+                };
+
+                pessoa.saudacao();
+
+
+                function Pessoa(nome) {
+                    this.nome = nome;
+                    this.saudacao = function() {
+                    alert(`Meu nome é ${this.nome}`);
+                };
+                }
+
+                const gui = new Pessoa("Guilherme");
+                gui.saudacao();
+
+
+                const pessoaPrototype = {
+                        saudacao: function() {
+                        alert(`meu apelido é ${this.nome}`);
+                    }
+                };
+
+                const guilherme = Object.create(pessoaPrototype);
+                guilherme.nome = "Gui";
+                guilherme.saudacao();
+
+            </script>
+        </body>
+    </html>
